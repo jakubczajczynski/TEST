@@ -1,0 +1,7 @@
+Multiple Match (z wildcards) 2,1
+False,False
+jakubczajczynski
+C:
+Multiple Match (z wildcards)
+A:
+jakubczajczynski
