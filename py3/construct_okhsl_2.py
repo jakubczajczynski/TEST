@@ -21,4 +21,5 @@ if "okhsv" not in Color.CS_MAP:
 
 color = Color("okhsl", [Hue, Saturation, Lightness], 1)
 
+
 X = color.convert("srgb").to_string(hex=True)  # Output as HEX
