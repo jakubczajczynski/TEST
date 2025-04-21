@@ -1,9 +1,11 @@
-NAZWA TESTOWA,4
+NAZWA TESTOWA,5
 False,False
 jakubczajczynski
 C:
 NAZWA TESTOWA
 A:
 jakubczajczynski
+N:
+testowy_python_script,testowy python script,2
 P:
 Grasshopper,8.19.25105.15001
