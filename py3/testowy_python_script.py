@@ -6,4 +6,4 @@
 a = "Hello Python 3 in Grasshopper!"
 print(a)
 
-a = "ty debilu ty gnoju"
+a = "ty debilu ty gnoju 2" 
