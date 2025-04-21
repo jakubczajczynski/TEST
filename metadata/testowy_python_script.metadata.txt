@@ -1,0 +1,7 @@
+testowy python script,1
+False,False
+jakubczajczynski
+C:
+Python 3 Script
+A:
+jakubczajczynski
