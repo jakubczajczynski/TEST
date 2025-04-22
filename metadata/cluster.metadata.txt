@@ -1,0 +1,14 @@
+Cluster,2
+True,False
+jakubczajczynski
+A:
+jakubczajczynski
+N:
+lista_pomieszczen_wewnetrznych,LISTA POMIESZCZEN WEWNETRZNYCH,1
+O:
+karty_mieszkan_-_rhino_blocks_do_revita,Karty Mieszkan - Rhino Blocks do Revita,43
+P:
+Grasshopper,8.19.25105.15001
+treesloth01,2016.12.12.1
+Pufferfish,3.0.0.0
+Rhino.Inside for Autodesk Revit,1.25.9005+7a807fb81b4d0c56006557a1b1c35cc2f34255d7
