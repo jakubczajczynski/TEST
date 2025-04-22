@@ -1,0 +1,15 @@
+PRZENOSZENIE PARAMETROW 01,1
+False,False
+jakubczajczynski
+A:
+jakubczajczynski
+N:
+group,Group,1
+group,Group,1
+group,Group,1
+group,Group,1
+P:
+Grasshopper,8.19.25105.15001
+Rhino.Inside for Autodesk Revit,1.32.9217+28f864b21444c7dcdb77ea7a9d0d8a5a261cbacb
+T:
+PIG
