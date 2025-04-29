@@ -1,0 +1,1 @@
+Uniwersalny skrypt do tworzenia kart mieszkan. Data scrapping z Revita do Rhino

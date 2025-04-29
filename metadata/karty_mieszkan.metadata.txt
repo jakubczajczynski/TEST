@@ -1,0 +1,75 @@
+Karty Mieszkan,60
+False,False
+jakubczajczynski
+A:
+jakubczajczynski
+N:
+group,Group,1
+general_query_of_elements,GENERAL QUERY OF ELEMENTS,1
+group,Group,1
+geometria__atrybuty,GEOMETRIA + ATRYBUTY,1
+tworzenie_geometrii_roznych,TWORZENIE GEOMETRII ROZNYCH,1
+query_or_create_layer,Query or Create Layer,1
+shift_to_depth_native_cluster,Shift to Depth (Native) Cluster,1
+group,Group,1
+metoda_naprawienia_konturu_do_rozwiniecia,METODA NAPRAWIENIA KONTURU (DO ROZWINIECIA),1
+metoda_naprawienia_konturu_do_rozwiniecia,METODA NAPRAWIENIA KONTURU (DO ROZWINIECIA),1
+kontur_okna_na_rzucie,KONTUR OKNA NA RZUCIE,1
+filtrowanie_drzwi_i_przypisanie_do_mieszkania,FILTROWANIE DRZWI I PRZYPISANIE DO MIESZKANIA,1
+group,Group,1
+group,Group,1
+python,Python,1
+rotacja_mieszkania,ROTACJA MIESZKANIA,1
+cluster,Cluster,1
+group,Group,1
+attributes_-_block_instances,ATTRIBUTES - BLOCK INSTANCES,1
+construct_block_definitions,CONSTRUCT BLOCK DEFINITIONS,1
+lodz,LODZ,1
+sort_numbers_and_text,Sort numbers and text,1
+group,Group,1
+lodz_custom_custom_sort,LODZ CUSTOM CUSTOM SORT,1
+custom_room_sort,Custom Room Sort,1
+rozne_levele,ROZNE LEVELE,1
+stworz_levele_visual_arq_w_rhino,STWORZ LEVELE VISUAL ARQ W RHINO,1
+group,Group,1
+material,Material,1
+preview,PREVIEW,1
+formatowanie_nazw_mieszkan,FORMATOWANIE NAZW MIESZKAN,1
+group,Group,1
+pomieszczenia,POMIESZCZENIA,1
+python_3_script,Python 3 Script,1
+group,Group,1
+listy_pomieszczen,LISTY POMIESZCZEN,1
+sformatowany_string_powierzchni_mieszkania,SFORMATOWANY STRING POWIERZCHNI MIESZKANIA,1
+group,Group,1
+group,Group,1
+department,DEPARTMENT,1
+nr_klatki,NR KLATKI,1
+nr_pietra,NR PIETRA,1
+group,Group,1
+ogranicz_zakres,Ogranicz zakres,1
+P:
+Grasshopper,8.19.25105.15001
+GhPython,8.19.25105.15001
+Heteroptera,8.1.0.0
+PythonEmbeddedPlugin,1.0.0.0
+MeshEdit Components,2.0.0.0
+treesloth01,2016.12.12.1
+Pufferfish,3.0.0.0
+Rhino.Inside for Autodesk Revit,1.32.9217+28f864b21444c7dcdb77ea7a9d0d8a5a261cbacb
+GhVa30,0.0.0.0
+Human,1.7.3.0
+LunchBox,2025.4.24.0
+LadybugGrasshopper,0.0.0.1
+Pancake,2.8.1.0
+Wombat,1.3.0.0
+Nautilus,1.9.9.7
+Clipper2,1.0.0.0
+T:
+Karty Mieszkan
+PIG
+Revit
+Arch
+WIP
+Sopot
+Mankowska
