@@ -1,0 +1,30 @@
+Karty Mieszkan - Rhino Blocks do Revita,88
+False,False
+jakubczajczynski
+A:
+jakubczajczynski
+N:
+group,Group,1
+nie_wiem_czy_to_potrzebne,NIE WIEM CZY TO POTRZEBNE,1
+query_revit_views_-_fast,Query Revit Views - Fast,1
+group,Group,1
+group,Group,1
+P:
+Grasshopper,8.19.25105.15001
+Heteroptera,8.1.0.0
+treesloth01,2016.12.12.1
+Pufferfish,3.0.0.0
+Rhino.Inside for Autodesk Revit,1.32.9217+28f864b21444c7dcdb77ea7a9d0d8a5a261cbacb
+Human,1.7.3.0
+MetaHopper,1.2.4
+Pancake,2.8.1.0
+Wombat,1.3.0.0
+Clipper2,1.0.0.0
+T:
+Karty Mieszkan
+PIG
+Revit
+Arch
+WIP
+Sopot
+Mankowska
