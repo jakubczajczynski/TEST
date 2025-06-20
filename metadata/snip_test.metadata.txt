@@ -1,0 +1,11 @@
+snip test,1
+False,False
+jakubczajczynski
+C:
+snip test
+A:
+jakubczajczynski
+N:
+read_xl_table_values,Read xl Table Values,4
+T:
+Test
