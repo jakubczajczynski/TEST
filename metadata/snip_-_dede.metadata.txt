@@ -1,0 +1,12 @@
+snip - dede,1
+False,False
+jakubczajczynski
+C:
+snip - dede
+A:
+jakubczajczynski
+N:
+snip_test,snip test,1
+read_xl_table_values,Read xl Table Values,4
+T:
+Test
