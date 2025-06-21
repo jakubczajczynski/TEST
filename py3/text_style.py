@@ -51,7 +51,7 @@ inputs:
   - name: Color
     type: Color
     default: null
-    description: GH Colour Swatch or (R,G,B) tuple or normalized float tuple; leave unconnected to keep existing
+    description: GH Colour Swatch or (R,G,B) tuple or normalized float tuple or "Automatic"; leave unconnected to keep existing
   - name: Trigger
     type: bool
     default: True
@@ -65,6 +65,7 @@ outputs:
 import xlwings as xw
 import os
 import System
+from xlwings.constants import ColorIndex
 
 def stylize_text(
     filepath,
@@ -100,7 +101,7 @@ def stylize_text(
     if italic is not None:
         com_font.Italic = bool(italic)
 
-    # Underline Type: 0 = none; 1 = single; 2 = double
+    # UnderlineType: 0 = none; 1 = single; 2 = double
     if underline_type is not None:
         if underline_type == 2:
             com_font.Underline = -4119  # xlUnderlineStyleDouble
@@ -113,26 +114,35 @@ def stylize_text(
     if strikethrough is not None:
         com_font.Strikethrough = bool(strikethrough)
 
-    # Color: System.Drawing.Color, int tuple, or normalized float tuple
+    # Color: GH Colour Swatch, tuple, normalized float tuple, or "Automatic"
     if color is not None:
-        try:
-            r, g, b = color.R, color.G, color.B
-        except Exception:
-            r, g, b = color
-        # Scale floats 0–1 to 0–255
-        if all(isinstance(c, float) and c <= 1.0 for c in (r, g, b)):
-            r, g, b = [int(c * 255) for c in (r, g, b)]
-        # Use xlwings wrapper for correct COM interop
-        rng.font.color = (r, g, b)
+        if isinstance(color, str) and color.lower() == "automatic":
+            com_font.ColorIndex = ColorIndex.xlColorIndexAutomatic
+        else:
+            try:
+                r, g, b = color.R, color.G, color.B
+            except Exception:
+                r, g, b = color
+            # Scale floats 0–1 to 0–255
+            if all(isinstance(c, float) and c <= 1.0 for c in (r, g, b)):
+                r, g, b = [int(c * 255) for c in (r, g, b)]
+            rng.font.color = (r, g, b)
 
     return True
 
 if Trigger:
     try:
         Styled = stylize_text(
-            FilePath, SheetName, CellRange,
-            FontName, FontSize, Bold, Italic,
-            UnderlineType, Strikethrough, Color
+            FilePath,
+            SheetName,
+            CellRange,
+            FontName,
+            FontSize,
+            Bold,
+            Italic,
+            UnderlineType,
+            Strikethrough,
+            Color
         )
     except Exception as e:
         Styled = False
