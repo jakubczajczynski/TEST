@@ -1,4 +1,4 @@
-Cell Border Lines,1
+Cell Border Lines,2
 False,False
 jakubczajczynski
 C:
