@@ -5,9 +5,11 @@
 # @GHInput: FontSize (object) 
 # @GHInput: Bold (object) 
 # @GHInput: Italic (object) 
+# @GHInput: UnderlineType (object) 
+# @GHInput: Strikethrough (object) 
 # @GHInput: Color (object) 
 # @GHInput: Trigger (object) 
-# @GHOutput: styled (object) 
+# @GHOutput: Styled (object) 
 
 """
 name: Excel Text Styler
@@ -38,10 +40,18 @@ inputs:
     type: bool
     default: null
     description: Italic text; leave unconnected to keep existing
+  - name: UnderlineType
+    type: int
+    default: null
+    description: 0 = remove underline; 1 = single underline; 2 = double underline; leave unconnected to keep existing
+  - name: Strikethrough
+    type: bool
+    default: null
+    description: Strikethrough text; leave unconnected to keep existing
   - name: Color
     type: Color
     default: null
-    description: Grasshopper Colour Swatch (System.Drawing.Color) or (R,G,B) tuple; leave unconnected to keep existing
+    description: GH Colour Swatch or (R,G,B) tuple or normalized float tuple; leave unconnected to keep existing
   - name: Trigger
     type: bool
     default: True
@@ -64,6 +74,8 @@ def stylize_text(
     font_size=None,
     bold=None,
     italic=None,
+    underline_type=None,
+    strikethrough=None,
     color=None
 ):
     # Open or attach to workbook
@@ -74,44 +86,53 @@ def stylize_text(
     except Exception:
         wb = xw.apps.active.books.open(filepath)
 
-    # Access sheet and range
     sht = wb.sheets[sheet_name]
     rng = sht.range(cell_range)
-    font = rng.api.Font
+    com_font = rng.api.Font
 
-    # Conditionally apply only those styles with inputs
+    # Name, size, bold, italic
     if font_name is not None:
-        font.Name = font_name
+        com_font.Name = font_name
     if font_size is not None:
-        font.Size = font_size
+        com_font.Size = font_size
     if bold is not None:
-        font.Bold = bool(bold)
+        com_font.Bold = bool(bold)
     if italic is not None:
-        font.Italic = bool(italic)
+        com_font.Italic = bool(italic)
+
+    # Underline Type: 0 = none; 1 = single; 2 = double
+    if underline_type is not None:
+        if underline_type == 2:
+            com_font.Underline = -4119  # xlUnderlineStyleDouble
+        elif underline_type == 1:
+            com_font.Underline = 2      # xlUnderlineStyleSingle
+        else:
+            com_font.Underline = -4142  # xlUnderlineStyleNone
+
+    # Strikethrough
+    if strikethrough is not None:
+        com_font.Strikethrough = bool(strikethrough)
+
+    # Color: System.Drawing.Color, int tuple, or normalized float tuple
     if color is not None:
-        # Handle GH Colour Swatch (System.Drawing.Color) or tuple
         try:
-            # .R/.G/.B exist on System.Drawing.Color
             r, g, b = color.R, color.G, color.B
         except Exception:
-            # Assume it's a tuple/list
             r, g, b = color
-        font.Color = int(r) + int(g) * 256 + int(b) * 256**2
+        # Scale floats 0–1 to 0–255
+        if all(isinstance(c, float) and c <= 1.0 for c in (r, g, b)):
+            r, g, b = [int(c * 255) for c in (r, g, b)]
+        # Use xlwings wrapper for correct COM interop
+        rng.font.color = (r, g, b)
 
     return True
 
-# Main execution
 if Trigger:
     try:
         Styled = stylize_text(
-            FilePath,
-            SheetName,
-            CellRange,
-            FontName,
-            FontSize,
-            Bold,
-            Italic,
-            Color
+            FilePath, SheetName, CellRange,
+            FontName, FontSize, Bold, Italic,
+            UnderlineType, Strikethrough, Color
         )
     except Exception as e:
         Styled = False
