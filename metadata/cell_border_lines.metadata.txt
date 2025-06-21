@@ -1,0 +1,9 @@
+Cell Border Lines,1
+False,False
+jakubczajczynski
+C:
+Cell Border Lines
+A:
+jakubczajczynski
+T:
+xlwings
